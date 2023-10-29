@@ -31,8 +31,17 @@ public class Main {
         }
 
         System.out.println("Total: $" + total);
+        
+        cart.removeItem(product1);
 
-        // Здесь можно добавить код для обработки оплаты, например, симулировать оплату карточкой или наличными.
+        total = cart.calculateTotal();
+
+        System.out.println("Updated Selected Items:");
+        for (OnlineProduct item : cart.getItems()) {
+            System.out.println(item.getName() + " - $" + item.getPrice());
+        }
+
+        System.out.println("Updated Total: $" + total);
     }
 }
 
