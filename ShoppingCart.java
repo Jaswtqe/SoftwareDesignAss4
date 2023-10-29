@@ -13,7 +13,12 @@ class ShoppingCart {
         items.add(product);
         notifyObservers(product);
     }
-
+    
+    public void removeItem(OnlineProduct product) {
+        items.remove(product);
+        notifyObservers(product);
+    }
+    
     public double calculateTotal() {
         double total = 0;
         for (OnlineProduct item : items) {
